@@ -12,7 +12,7 @@ Esse foi o TCC (trabalho de conclusão de curso) do meu 3º ano do ensino médio
 
 #### Página dos tipos de resíduos
 
-- Gabriel Lima
+- <a href="https://github.com/L27gabriel">Gabriel Lima</a>
     - Front-end
 
 ## Roadmap
