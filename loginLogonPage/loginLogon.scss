@@ -1,0 +1,259 @@
+@import '../assets/scss/resets';
+@import '../assets/scss/mixins';
+
+body {    
+    background-color: var(--backgroundColor);
+    color: rgb(255, 255, 255);
+    position: relative;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 10fr;
+    padding: 2rem 10%;
+    gap: 0 5%;
+}
+
+header {
+    grid-area: 1/1/2/7;
+
+    .titles {
+        font-family: "Poppins";
+
+        .logo {
+            @include greenGradient();
+        }
+
+        p {
+            font-family: "Inter";
+        }
+    }
+}
+
+main {
+    @include flexBox($flexDirection: column, $gap: 2rem);
+    grid-area: 2/1/3/7;
+
+    #forms {
+        @include flexBox();
+        height: 100%;
+
+        .form {
+            @include flexBox($flexDirection: column, $gap: 3rem);
+            font-family: 'Inter';
+            position: absolute;
+    
+            min-height: 30vh;
+            width: 80%;
+            max-width: 400px;
+    
+            transition: all .2s linear;
+
+            .textTerms p{
+                font-size: 1.1rem;
+            }
+    
+            .field {
+                position: relative;
+                width: 100%;
+    
+                input {
+                    border-bottom: 2px solid rgb(255, 255, 255);
+                    transition: all .2s linear;
+                    color: rgb(255, 255, 255);
+                    width: 100%;
+    
+                    font-size: 1.1rem;
+
+                    &[type='password']::-ms-reveal,
+                    &[type='password']::-ms-clear {
+                        // Estilo do icone automatico do input de senha
+                        background-color: white;
+                        padding: 0 .2rem;
+                    }
+    
+                    &.error {
+                        border-bottom: 2px solid var(--dangerColor);
+                    }
+    
+                    &.correct {
+                        border-bottom: 2px solid var(--successColor);
+                    }
+                }
+    
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+    
+                    font-size: 1.1rem;
+    
+                    transition: all .2s linear;
+                }
+    
+                input ~ label{
+                    top: -1.5rem;
+                    font-size: .95rem;
+                }
+    
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover, 
+                input:-webkit-autofill:focus, 
+                input:-webkit-autofill:active  {
+                    -webkit-box-shadow: 0 0 0 30px #1f1f1f inset !important;
+                    -webkit-text-fill-color: white !important;
+                }
+            }
+    
+            button[type='submit'] {
+                @include card3D($boxShadow: 0 0 50px 5px rgb(31, 31, 31), $borderRadius: 2rem);
+                border: 2px solid rgb(255, 255, 255);
+                color: rgb(255, 255, 255);
+                cursor: pointer;
+                transition: all .2s linear;
+                padding: .5rem 2.5rem;
+                font-size: 1rem;
+    
+                &:hover {
+                    border-color: var(--successColor);
+                    color: var(--successColor);
+                    @include card3D($boxShadow: 0 0 50px 5px rgb(25, 25, 25), $borderRadius: 2rem);
+                }
+            }
+    
+            &:not(.active) {
+                display: none;
+            }
+    
+            &.login:not(.active) {
+                transform: translateX(-100vw);
+            }
+    
+            &.signUp:not(.active) {
+                transform: translateX(100vw);
+            }
+    
+            &.active {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    #accessModel {
+        @include flexBox($flexDirection: column, $gap: 1rem);
+        width: 225px;
+
+        #toggleForm {
+            @include flexBox($justify: space-between);
+            @include card3D($boxShadow: 0 0 50px 5px rgb(31, 31, 31));
+
+            width: 100%;
+            height: 3rem;
+            border: 2px solid rgb(255, 255, 255);
+            border-radius: 2rem;
+            padding: 1rem .3rem;
+
+            .toggleButton {
+                @include flexBox();
+                height: 100%;
+                width: 50%;
+                padding: 1rem;
+                border-radius: 2rem;
+                position: relative;
+                color: rgb(255, 255, 255);
+                font-size: 1rem;
+                cursor: pointer;
+
+                transition: all .2s linear;
+
+                &.active {
+                    color: var(--successColor);
+                    border: 2px solid var(--successColor);
+                }
+            }
+        }
+
+        .noRegister {
+            position: relative;
+            font-family: 'Poppins';
+            overflow: hidden;
+            color: rgb(255, 255, 255);
+
+            &::before {
+                content: '';
+                position: absolute;
+                bottom: -.2rem;
+                left: 0;
+                width: 0;
+                height: 2px;
+                background-color: var(--green);
+
+                transition: width .2s linear;
+            }
+
+            &:hover::before {
+                width: 100%;
+            }
+        }
+    }
+}
+
+.video {
+    position: absolute;
+    left: 0;
+    top: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    z-index: -100;
+    filter: brightness(0.3);
+
+    &.videoDesktop {
+        display: none;
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    body {
+        grid-template-columns: repeat(16, 1fr);
+        grid-template-rows: 1fr 9fr;
+        padding: 2rem 2%;
+        gap: 2rem 2%;
+    }
+
+    header {
+        grid-area: 1/2/2/7;
+    }
+
+    main {
+        grid-area: 2/6/3/12;
+
+        .form {
+            @include card3D($boxShadow: 0 0 50px 5px rgba(22, 22, 22, 0.793), $borderRadius: 1rem);
+            background-color: rgb(31, 31, 31);
+            padding: 3rem 2.5rem 2rem;
+        }
+    }
+
+    .video {
+        &.videoMobile {
+            display: none;
+        }
+
+        &.videoDesktop {
+            display: block;
+        }
+    }
+}
+
+// Responsividade para as telas até 565px de altura (para qualquer dispositivo, ao abrir o teclado, não quebrar o layout)
+
+@media (max-height: 565px) {
+    main {
+        #accessModel {
+            display: none;
+        }
+    }
+}

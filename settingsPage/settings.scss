@@ -1,0 +1,260 @@
+@import '../assets/scss/preloader';
+@import '../assets/scss/generalPattern';
+@import '../assets/scss/userPhotoContainer';
+@import '../assets/scss/typesGarbage';
+@import '../assets/scss/bot';
+@import '../assets/scss/cards';
+
+body {
+    min-height: auto;
+}
+
+header {
+    #topHeader {
+        flex-direction: column-reverse;
+        gap: 1.5rem;
+    }
+}
+
+#userPhotoForm {
+    display: none;
+}   
+
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+
+    img {
+        width: 170px;
+        height: 170px;
+    }
+}
+
+
+main {
+    & > section {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    padding-bottom: 5rem;
+    font-family: 'Inter light';
+
+    #userInfos{
+        display: none;
+    }
+
+
+    #settingsChangeContainer {
+        @include flexBox($align: flex-start, $flexDirection: column, $gap: 1rem);
+        width: 100%;
+
+        .themeContainer {
+            @include flexBox($align: flex-start, $flexDirection: column, $gap: 1rem);
+            width: 100%;
+
+            .changeThemeContainer {
+                @include flexBox($justify: space-around);
+                width: 100%;
+    
+                .theme {
+                    @include card3D($borderRadius: 1rem);
+                    transition: all .3s ease;
+                    padding: 1rem;
+                    cursor: pointer;
+    
+                    &:hover {
+                        transform: scale(1.1);
+                    }
+    
+                    svg {
+                        path {
+                            stroke: var(--color);
+                        }
+                    }
+    
+                    &.active {
+                        svg {
+                            path {
+                                stroke: var(--green);
+                            }
+                        }
+                    }
+    
+                    &:not(.active) {
+                        @include card3D($boxShadow: inset 0 0 10px 15px var(--shadow), $borderRadius: 1rem);
+                    }
+                }
+            }
+        }
+
+        .containerAccount {
+            width: 100%;
+    
+            .title {
+                @include flexBox($justify: space-between);
+                width: 100%;
+
+                #editDataButton {
+                    padding: 1rem;
+                    cursor: pointer;
+                    transition: all .2s linear;
+
+                    &:hover, &.active{
+                        @include card3D($borderRadius: 1rem);
+                        scale: 1.1;
+                    }
+                }
+            }
+    
+            #formChangeDataAccont {
+                @include flexBox($align: flex-start, $flexDirection: column, $gap: 1.5rem);
+                width: 100%;
+
+                input[disabled], input[disabled] ~ label {
+                    opacity: 0.6;
+                }
+    
+                .field {
+                    @include flexBox($align: flex-start, $flexDirection: column-reverse, $gap: .5rem);
+                    width: 100%;
+
+                    input {
+                        border-bottom: 2px solid var(--color);
+                        transition: all .2s linear;
+                        color: var(--color);
+                        width: 100%;
+                        padding: .2rem 0;
+                        font-style: italic;
+
+                        &[type='password']::-ms-reveal,
+                        &[type='password']::-ms-clear {
+                            // Estilo do icone automatico do input de senha
+                            background-color: white;
+                            padding: 0 .2rem;
+                        }
+                    }
+
+                    input:-webkit-autofill,
+                    input:-webkit-autofill:hover, 
+                    input:-webkit-autofill:focus, 
+                    input:-webkit-autofill:active  {
+                        -webkit-box-shadow: 0 0 0 30px #1f1f1f inset !important;
+                        -webkit-text-fill-color: white !important;
+                    }
+                }
+
+                #editAccount {
+                    @include flexBox($gap: 1rem);
+                    width: 100%;
+                    max-width: 300px;
+                    align-self: center;
+                    height: 2.5rem;
+                    color: var(--green);
+                    cursor: pointer;
+                    transition: all .2s linear;
+                    border-radius: 5rem;
+                    font-size: 1.2rem;
+                    font-style: italic;
+                    border: 1px solid var(--color);
+    
+                    &:hover {
+                        @include card3D($borderRadius: 5rem);
+                        border: 1px solid var(--green);
+                        color: var(--color);
+                    }
+                }
+            }
+
+            #dangerOptions {
+                @include flexBox($flexDirection: column, $gap: 1rem);
+                width: 100%;
+                margin-top: 1.5rem;
+
+                #options {
+                    @include flexBox($flexWrap: wrap, $gap: 1rem);
+                    width: 100%;
+
+                    .optionBtn {
+                        @include flexBox($gap: 1rem);
+                        width: 100%;
+                        align-self: center;
+                        height: 2.5rem;
+                        cursor: pointer;
+                        transition: all .2s linear;
+                        border-radius: 5rem;
+                        border: 1px solid var(--color);
+
+                        &:hover {
+                            @include card3D($borderRadius: 5rem);
+                            border: 1px solid #FF0000;
+                        }
+
+                        button {
+                            @include flexBox($gap: 1rem);
+                            font-size: 1.2rem;
+                            font-style: italic;
+                            color: var(--color);
+                        }
+                    }
+                }       
+            }
+        }
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    header {
+        display: none;
+    }
+
+    #bottomMenu {
+        nav {
+            height: 100vh;
+        }
+    }
+    
+    main {
+        padding: 2rem 0;
+
+        #userInfos {
+            @include flexBox($flexDirection: column, $gap: 1rem);
+            
+            #userData {
+                @include flexBox($flexDirection: column-reverse, $gap: 1.5rem);     
+
+                .userPhotoContainer {
+                    width: 100px;
+                    height: 100px;
+                    cursor: pointer;
+
+                    &:hover::before {
+                        border-color: var(--green);
+                    }
+                }
+            }
+        }
+
+        #settingsChangeContainer {
+            #formChangeDataAccont {
+                min-height: 350px;
+            }
+    
+            .containerAccount {
+                #dangerOptions {
+                    margin-top: 0;
+
+                    #options {
+                        flex-wrap: nowrap;
+                        .optionBtn {
+                            max-width: 100%;
+                        }
+                    }
+                }
+            }
+        }  
+    }
+}

@@ -1,0 +1,2104 @@
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@-webkit-keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@-webkit-keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@-webkit-keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+#preloader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: whitesmoke;
+  font-size: 2rem;
+  overflow: hidden;
+  z-index: 100000;
+  font-style: italic;
+}
+#preloader h1 {
+  background: linear-gradient(180deg, #00D76E 0%, #00D76E 0.01%, #1ABD00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  border-right: 2px solid var(--color);
+  white-space: nowrap;
+  overflow: hidden;
+  font-family: Times, serif;
+  -webkit-animation: blinkCursor 500ms steps(40) infinite normal forwards, typing 2s steps(40) 10ms normal;
+          animation: blinkCursor 500ms steps(40) infinite normal forwards, typing 2s steps(40) 10ms normal;
+}
+
+.skeleton {
+  background-color: #b3b3b3 !important;
+  color: transparent !important;
+  -webkit-animation: skeletonLoading 1.3s normal 1s infinite !important;
+          animation: skeletonLoading 1.3s normal 1s infinite !important;
+  border-radius: 1rem;
+}
+.skeleton > * {
+  z-index: -100000;
+  opacity: 0;
+}
+
+@media (min-width: 1001px) {
+  #preloader {
+    font-size: 5rem;
+  }
+  #preloader h1 {
+    padding-right: 1rem;
+    -webkit-animation: blinkCursor 500ms steps(40) infinite normal forwards, typing 2s steps(40) 10ms normal;
+            animation: blinkCursor 500ms steps(40) infinite normal forwards, typing 2s steps(40) 10ms normal;
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar, body > *::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track, body > *::-webkit-scrollbar-track {
+  background: none;
+}
+body::-webkit-scrollbar-thumb, body > *::-webkit-scrollbar-thumb {
+  background-color: var(--waveUserPhoto2);
+  border-radius: 20px;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+input, button {
+  background: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid;
+  border-color: var(--color);
+  border-radius: 0.5rem;
+  color: var(--color);
+}
+
+svg.feather {
+  stroke-width: 2.5px;
+}
+
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+html {
+  overflow: hidden;
+}
+
+label span {
+  color: var(--extraColor);
+}
+
+*[aria-bot] {
+  cursor: pointer;
+}
+
+body {
+  background-color: var(--backgroundColor);
+  color: var(--color);
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr auto;
+  padding: 0 10%;
+  gap: 0 5%;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 2rem 0;
+  grid-area: 1/1/2/7;
+}
+header #topHeader {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+
+#user {
+  font-style: italic;
+  font-family: "Poppins", sans-serif;
+}
+#user span {
+  background: linear-gradient(180deg, #00D76E 0%, #00D76E 0.01%, #1ABD00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  grid-area: 2/1/3/7;
+}
+
+#bottomMenu {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  border-radius: 0.5rem 0.5rem 0 0;
+  background-color: var(--backgroundColor);
+  font-family: "Inter";
+}
+#bottomMenu nav {
+  width: 100%;
+  padding: 0.5rem;
+}
+#bottomMenu nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 0;
+  flex-wrap: wrap;
+}
+#bottomMenu nav ul .logo {
+  display: none;
+}
+#bottomMenu nav ul li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  transition: all 0.2s ease;
+  padding: 0.5rem;
+}
+#bottomMenu nav ul li a.active, #bottomMenu nav ul li a:hover {
+  color: var(--green);
+}
+#bottomMenu nav ul li a.subActive {
+  color: var(--extraColor);
+}
+#bottomMenu nav ul .changeThemeContainer {
+  display: none;
+}
+
+@media (min-width: 1001px) {
+  body {
+    grid-template-columns: repeat(16, 1fr);
+    padding: 0 2%;
+    gap: 0 2%;
+  }
+  header {
+    min-width: -webkit-fit-content;
+    min-width: -moz-fit-content;
+    min-width: fit-content;
+    width: -webkit-min-content;
+    width: -moz-min-content;
+    width: min-content;
+    position: fixed;
+  }
+  header #topHeader {
+    flex-direction: row-reverse;
+    gap: 1rem;
+  }
+  #bottomMenu {
+    grid-area: 2/1/3/2;
+    left: unset;
+    width: unset;
+    background: none;
+  }
+  #bottomMenu nav {
+    height: 75vh;
+    padding: 0;
+  }
+  #bottomMenu nav ul {
+    height: 100%;
+    flex-direction: column;
+  }
+  #bottomMenu nav ul .logo {
+    display: block;
+    background: linear-gradient(180deg, #00D76E 0%, #00D76E 0.01%, #1ABD00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: "Poppins";
+    font-size: xx-large;
+  }
+  #bottomMenu nav ul li {
+    position: relative;
+  }
+  #bottomMenu nav ul li a {
+    padding: 1rem;
+  }
+  #bottomMenu nav ul li a.active::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    border-radius: 1rem;
+    background-color: var(--green);
+  }
+  #bottomMenu nav ul .changeThemeContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  #bottomMenu nav ul .changeThemeContainer .theme {
+    box-shadow: 0 0 50px 5px var(--shadow);
+    border-radius: 1rem;
+    transition: all 0.3s ease;
+    padding: 1rem;
+    cursor: pointer;
+  }
+  #bottomMenu nav ul .changeThemeContainer .theme:hover {
+    transform: scale(1.1);
+  }
+  #bottomMenu nav ul .changeThemeContainer .theme svg path {
+    stroke: var(--color);
+  }
+  #bottomMenu nav ul .changeThemeContainer .theme.active svg path {
+    stroke: var(--green);
+  }
+  #bottomMenu nav ul .changeThemeContainer .theme:not(.active) {
+    box-shadow: inset 0 0 10px 15px var(--shadow);
+    border-radius: 1rem;
+  }
+  main {
+    grid-area: 1/5/3/12;
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+.userPhotoContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  position: relative;
+  background-image: url(../assets/midia/defaultUserPhoto.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.userPhotoContainer::before {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  transition: all 0.2s linear;
+  width: 100%;
+  height: 100%;
+  border: 2px solid var(--color);
+}
+.userPhotoContainer .circle {
+  position: absolute;
+  width: 110%;
+  height: 110%;
+  border-radius: 50%;
+  border: 2px solid var(--color);
+  z-index: -1;
+}
+.userPhotoContainer .circle:nth-child(1) {
+  width: 160%;
+  height: 160%;
+  border: 2px solid var(--waveUserPhoto1);
+}
+.userPhotoContainer .circle:nth-child(2) {
+  width: 220%;
+  height: 220%;
+  border: 2px solid var(--waveUserPhoto2);
+}
+.userPhotoContainer .circle:nth-child(3) {
+  width: 280%;
+  height: 280%;
+  border: 2px solid var(--waveUserPhoto3);
+}
+.userPhotoContainer .circle:nth-child(4) {
+  width: 340%;
+  height: 340%;
+  border: 2px solid var(--waveUserPhoto4);
+}
+
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+:root.lightTheme .disposalSection .disposalCards .disposalCard {
+  box-shadow: none;
+  border-radius: 1rem;
+}
+
+.disposalSection {
+  display: flex;
+  flex-direction: column;
+  align-items: unser;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+.disposalSection .disposalCards {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.disposalSection .disposalCards .disposalCard {
+  box-shadow: 0 0 50px 5px var(--shadow);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  position: relative;
+  width: 50%;
+  max-width: 300px;
+  height: 200px;
+  padding: 0.5rem;
+  font-family: "Poppins light";
+  text-align: center;
+  color: rgb(255, 255, 255);
+}
+.disposalSection .disposalCards .disposalCard:nth-child(1) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/midia/imgDescartar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.disposalSection .disposalCards .disposalCard:nth-child(2) {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("../assets/midia/imgSolicitar.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+.disposalSection .disposalCards .disposalCard svg {
+  position: absolute;
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+@media (min-width: 1001px) {
+  .disposalSection .title {
+    display: none;
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+#typesGarbage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  max-width: 700px;
+  display: none;
+}
+#typesGarbage .cards {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+#typesGarbage .cards .card:last-child {
+  width: 100%;
+}
+#typesGarbage .cards .card:last-child .icon {
+  padding: 1.3rem 0;
+  width: 90%;
+}
+#typesGarbage .cards .card .icon {
+  padding: 2rem 2rem;
+}
+
+@media (min-width: 1001px) and (max-width: 1024px) {
+  #typesGarbage {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    right: 2%;
+    width: 25%;
+    max-width: 385px;
+  }
+  #typesGarbage .cards .card:nth-child(3), #typesGarbage .cards .card:nth-child(5) {
+    display: none;
+  }
+  #typesGarbage .cards .card:last-child .icon {
+    width: 80%;
+  }
+}
+@media (min-width: 1025px) {
+  #typesGarbage {
+    display: flex;
+    position: fixed;
+    top: 2rem;
+    right: 2%;
+    width: 25%;
+    max-width: 385px;
+  }
+  #typesGarbage .cards .card:last-child .icon {
+    width: 80%;
+  }
+}
+@media (min-width: 1280px) {
+  #typesGarbage .cards .card:nth-child(3), #typesGarbage .cards .card:nth-child(5) {
+    display: flex;
+  }
+}
+@media (max-height: 760px) and (min-width: 1001px) {
+  #typesGarbage .cards .card:nth-child(2), #typesGarbage .cards .card:nth-child(3), #typesGarbage .cards .card:nth-child(4), #typesGarbage .cards .card:nth-child(5) {
+    display: none;
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+#botLink {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  padding: 1rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+#botLink .chat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: unset;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  padding: 2rem;
+  justify-content: space-evenly;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 31, 31, 0.4509803922);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+  z-index: 10000;
+  transition: all 0.2s linear;
+  transform: translateX(100%);
+}
+#botLink .chat > * {
+  max-width: 500px;
+  font-family: "Poppins";
+}
+#botLink .chat.show {
+  transform: translateX(0);
+}
+#botLink .chat #closeBot {
+  background: linear-gradient(94.79deg, #00E0FF -25.32%, #0558BA 170.77%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+#botLink .chat .chatScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: unset;
+  justify-content: unset;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 50px 5px var(--shadow);
+  border-radius: 0;
+  flex-grow: 1;
+  width: 100%;
+  border: 2px solid rgba(236, 235, 235, 0.879);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.3rem;
+  overflow: auto;
+}
+#botLink .chat .chatScreen .link {
+  color: var(--extraColor);
+}
+#botLink .chat form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+#botLink .chat form input#commandInput {
+  flex-grow: 1;
+  height: 100%;
+  border: 2px solid rgba(236, 235, 235, 0.879);
+  border-radius: 0.5rem;
+  padding-left: 0.5rem;
+  color: white;
+}
+
+#botIcon path {
+  stroke-width: 3px;
+}
+#botIcon circle {
+  r: 3.5;
+}
+
+.botContainer {
+  display: none;
+  width: 100%;
+}
+.botContainer .title {
+  font-family: "Poppins";
+}
+.botContainer .title h2 {
+  background: linear-gradient(-190deg, #2400FF -8.37%, #00A2FD 139.97%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+.botContainer .title p {
+  font-weight: 100;
+}
+.botContainer .chat {
+  box-shadow: 0 0 50px 5px var(--shadow);
+  border-radius: 1rem;
+  width: 100%;
+  height: 190px;
+  padding: 0.85rem;
+  position: relative;
+}
+.botContainer .chat #botIcon {
+  position: absolute;
+  z-index: -100;
+  opacity: 0.5;
+  top: 0.5rem;
+  right: 0.5rem;
+}
+.botContainer .chat .chatScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 80%;
+  font-family: "Inter";
+  overflow: auto;
+}
+.botContainer .chat .chatScreen::-webkit-scrollbar {
+  width: 12px;
+}
+.botContainer .chat .chatScreen::-webkit-scrollbar-track {
+  background: none;
+}
+.botContainer .chat .chatScreen::-webkit-scrollbar-thumb {
+  background-color: var(--waveUserPhoto2);
+  border-radius: 20px;
+  border: none;
+}
+.botContainer .chat .chatScreen .link {
+  color: var(--extraColor);
+}
+.botContainer .chat form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 20%;
+}
+.botContainer .chat form input {
+  width: 100%;
+  color: var(--color);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0.5rem 0;
+  font-family: "Inter";
+}
+.botContainer .chat form input::-moz-placeholder {
+  font-style: italic;
+}
+.botContainer .chat form input:-ms-input-placeholder {
+  font-style: italic;
+}
+.botContainer .chat form input::placeholder {
+  font-style: italic;
+}
+.botContainer .chat form #sendCommand {
+  cursor: pointer;
+}
+
+@media (min-width: 1001px) {
+  .botContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0;
+    flex-wrap: nowrap;
+    width: 80%;
+  }
+  #botLink {
+    display: none;
+  }
+}
+@media (max-height: 760px) and (min-width: 1001px) {
+  .botContainer .chat {
+    height: 160px;
+  }
+}
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+.title {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.title h3 {
+  font-family: "Poppins";
+  font-weight: 100;
+}
+.title p {
+  font-family: "Poppins light";
+  margin-top: 0.5rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  font-family: "Poppins light";
+}
+.card .icon {
+  box-shadow: 0 0 50px 5px var(--shadow);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  padding: 1rem;
+}
+
+@media (min-width: 1001px) {
+  .card {
+    cursor: pointer;
+  }
+  .card .icon {
+    transition: all 0.3s ease;
+  }
+  .card:hover .icon {
+    transform: scale(1.15);
+  }
+}
+header #topHeader {
+  flex-direction: column-reverse;
+  gap: 1.5rem;
+}
+header #classification {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+header #classification #ratingStars {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+}
+header #classification #ratingStars .star path {
+  stroke: var(--color);
+  opacity: 0.7;
+}
+header #classification #ratingStars .star.active path {
+  stroke: var(--green);
+}
+header #classification .activityClass {
+  background: linear-gradient(94.79deg, #00E0FF -25.32%, #0558BA 170.77%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+  font-family: "Inter light";
+  font-style: italic;
+}
+header #classification .activityClass h3 {
+  cursor: pointer;
+}
+
+.logo {
+  max-width: 100%;
+  max-height: 100%;
+}
+.logo img {
+  width: 170px;
+  height: 170px;
+}
+
+main {
+  padding-bottom: 10rem;
+}
+main > section {
+  width: 100%;
+  max-width: 640px;
+}
+main .link {
+  color: var(--extraColor);
+  font-style: italic;
+}
+main #userInfos {
+  display: none;
+}
+main #activityHistory {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 2.5rem;
+  flex-wrap: nowrap;
+  font-family: "Inter light";
+  width: 100%;
+}
+main #activityHistory .communitySupportData {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+main #activityHistory .communitySupportData .engagements {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+main #activityHistory .communitySupportData .countPublications {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: nowrap;
+}
+main #publications {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+main #publications .notPhotos {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  text-align: center;
+  min-height: 300px;
+  width: 100%;
+  font-family: "Poppins";
+  color: var(--smoothEdge);
+}
+main #publications .notPhotos h2 {
+  font-size: 1.5rem;
+}
+main #publications .notPhotos p {
+  font-size: 1rem;
+  max-width: 400px;
+}
+main #publications img {
+  box-shadow: 0 0 50px 5px var(--shadow);
+  border-radius: 1rem;
+  height: 100%;
+  max-height: 200px;
+  flex: 1 0 auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  flex: 1 0 auto;
+}
+main #publications img:nth-child(1) {
+  min-width: 100px;
+  width: 503px;
+  max-width: 100%;
+}
+main #publications img:nth-child(2) {
+  min-width: 100px;
+  width: 197px;
+  max-width: 100%;
+}
+main #publications img:nth-child(3) {
+  min-width: 100px;
+  width: 274px;
+  max-width: 100%;
+}
+main #publications img:nth-child(4) {
+  min-width: 100px;
+  width: 422px;
+  max-width: 100%;
+}
+main #publications img:nth-child(5) {
+  min-width: 100px;
+  width: 107px;
+  max-width: 100%;
+}
+main #publications img:nth-child(6) {
+  min-width: 100px;
+  width: 386px;
+  max-width: 100%;
+}
+main #publications img:nth-child(7) {
+  min-width: 100px;
+  width: 165px;
+  max-width: 100%;
+}
+main #publications img:nth-child(8) {
+  min-width: 100px;
+  width: 251px;
+  max-width: 100%;
+}
+main #publications img:nth-child(9) {
+  min-width: 100px;
+  width: 179px;
+  max-width: 100%;
+}
+main #publications img:nth-child(10) {
+  min-width: 100px;
+  width: 589px;
+  max-width: 100%;
+}
+main #publications img:nth-child(11) {
+  min-width: 100px;
+  width: 233px;
+  max-width: 100%;
+}
+main #publications img:nth-child(12) {
+  min-width: 100px;
+  width: 444px;
+  max-width: 100%;
+}
+main #publications img:nth-child(13) {
+  min-width: 100px;
+  width: 332px;
+  max-width: 100%;
+}
+main #publications img:nth-child(14) {
+  min-width: 100px;
+  width: 263px;
+  max-width: 100%;
+}
+main #publications img:nth-child(15) {
+  min-width: 100px;
+  width: 464px;
+  max-width: 100%;
+}
+main #publications img:nth-child(16) {
+  min-width: 100px;
+  width: 340px;
+  max-width: 100%;
+}
+main #publications img:nth-child(17) {
+  min-width: 100px;
+  width: 305px;
+  max-width: 100%;
+}
+main #publications img:nth-child(18) {
+  min-width: 100px;
+  width: 419px;
+  max-width: 100%;
+}
+main #publications img:nth-child(19) {
+  min-width: 100px;
+  width: 252px;
+  max-width: 100%;
+}
+main #publications img:nth-child(20) {
+  min-width: 100px;
+  width: 458px;
+  max-width: 100%;
+}
+main #publications img:nth-child(21) {
+  min-width: 100px;
+  width: 420px;
+  max-width: 100%;
+}
+main #publications img:nth-child(22) {
+  min-width: 100px;
+  width: 588px;
+  max-width: 100%;
+}
+main #publications img:nth-child(23) {
+  min-width: 100px;
+  width: 368px;
+  max-width: 100%;
+}
+main #publications img:nth-child(24) {
+  min-width: 100px;
+  width: 296px;
+  max-width: 100%;
+}
+main #publications img:nth-child(25) {
+  min-width: 100px;
+  width: 173px;
+  max-width: 100%;
+}
+main #publications img:nth-child(26) {
+  min-width: 100px;
+  width: 423px;
+  max-width: 100%;
+}
+main #publications img:nth-child(27) {
+  min-width: 100px;
+  width: 305px;
+  max-width: 100%;
+}
+main #publications img:nth-child(28) {
+  min-width: 100px;
+  width: 427px;
+  max-width: 100%;
+}
+main #publications img:nth-child(29) {
+  min-width: 100px;
+  width: 460px;
+  max-width: 100%;
+}
+main #publications img:nth-child(30) {
+  min-width: 100px;
+  width: 386px;
+  max-width: 100%;
+}
+main #publications img:nth-child(31) {
+  min-width: 100px;
+  width: 484px;
+  max-width: 100%;
+}
+main #publications img:nth-child(32) {
+  min-width: 100px;
+  width: 328px;
+  max-width: 100%;
+}
+main #publications img:nth-child(33) {
+  min-width: 100px;
+  width: 227px;
+  max-width: 100%;
+}
+main #publications img:nth-child(34) {
+  min-width: 100px;
+  width: 233px;
+  max-width: 100%;
+}
+main #publications img:nth-child(35) {
+  min-width: 100px;
+  width: 364px;
+  max-width: 100%;
+}
+main #publications img:nth-child(36) {
+  min-width: 100px;
+  width: 331px;
+  max-width: 100%;
+}
+
+@media (min-width: 1001px) {
+  header {
+    display: none;
+  }
+  #bottomMenu nav {
+    height: 100vh;
+  }
+  main {
+    padding: 2rem 0;
+  }
+  main .userPhotoContainer {
+    width: 100px;
+    height: 100px;
+  }
+  main #userInfos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: nowrap;
+  }
+  main #userInfos #userData {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: nowrap;
+  }
+  main #userInfos #classification {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: nowrap;
+    width: 100%;
+  }
+  main #userInfos #classification #ratingStars {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    flex-wrap: nowrap;
+  }
+  main #userInfos #classification #ratingStars .star path {
+    stroke: var(--color);
+    opacity: 0.7;
+  }
+  main #userInfos #classification #ratingStars .star.active path {
+    stroke: var(--green);
+  }
+  main #userInfos #classification .activityClass {
+    background: linear-gradient(94.79deg, #00E0FF -25.32%, #0558BA 170.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-family: "Inter light";
+    font-style: italic;
+  }
+}/*# sourceMappingURL=perfil.css.map */

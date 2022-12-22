@@ -1,0 +1,177 @@
+@import '../assets/scss/preloader';
+@import '../assets/scss/generalPattern';
+@import '../assets/scss/userPhotoContainer';
+@import '../assets/scss/disposalSection';
+@import '../assets/scss/typesGarbage';
+@import '../assets/scss/bot';
+@import '../assets/scss/cards';
+
+body {
+    min-height: auto;
+    padding: 0;
+}
+
+header {
+    padding: 2rem 10%;
+}
+
+main {
+    padding-bottom: 4rem;
+
+    .disposalSection {
+        padding: 0 10%;
+        width: 100%;
+    }
+
+    #listAllComplaints {
+        @include flexBox($flexDirection: column, $gap: 2rem);
+        width: 100%;
+        max-width: 640px;
+
+        .denuncePost {
+            @include flexBox($flexDirection: column, $gap: .5rem);
+            width: 100%;
+        
+            .garbagePhoto {
+                min-height: 70vh;
+                max-height: 600px;
+                width: 100%;
+                position: relative;
+
+                background-image: url(../mediasComplaints/DefaultComplaintPhoto.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+
+                .engagementCount {
+                    @include flexBox();
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: .8rem 1.8rem;
+                    font-family: 'Inter light';
+                    background-color: #1f1f1f;
+                    border-radius: 0 0 0 1rem;
+                    color: white;
+
+                    .counter {
+                        .supportGoal {
+                            color: rgb(213, 13, 13);
+
+                            &.half {
+                                color: rgb(247, 247, 6);
+                            }
+
+                            &.near {
+                                color: rgb(15, 165, 40);
+                            }
+                        }
+
+                        .supports {
+                            @include greenGradient();
+                        }
+                    }
+                }
+            }
+
+            .panel {
+                @include flexBox($justify: space-between, $flexWrap: wrap, $gap: 1rem 2rem);
+                width: 100%;
+                padding: 1rem 0;
+                font-family: 'Inter light';
+
+                .creatorUser {
+                    @include flexBox($gap: 1rem);
+                    
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                    }
+                }
+
+                .options {
+                    @include flexBox($gap: 1rem);
+
+                    .option {
+                        padding: .5rem;
+                        cursor: pointer;
+
+                        &.disabled {
+                            opacity: .3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsividade para as telas acima de 375px
+
+@media (min-width: 375px) {
+    body {
+        padding: 0 10%;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+
+    main {
+        padding: 0 0 4rem 0;
+
+        .disposalSection {
+            padding: 0;
+        }
+
+        #listAllComplaints {
+            .denuncePost {
+                .garbagePhoto {
+                    border-radius: 1rem;
+
+                    .engagementCount {
+                        border-radius: 0 1rem 0 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    body {
+        padding: 0 2%;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+
+    main {
+        padding: 2rem 0;
+
+        #listAllComplaints {
+            .denuncePost {
+                .panel {
+                    .creatorUser {
+                        img {
+                            width: 70px;
+                            height: 70px;
+                        }
+                    }
+
+                    .options {
+                        gap: 2rem;
+                        svg {
+                            scale: 1.3;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,104 @@
+@import '../assets/scss/preloader';
+@import '../assets/scss/generalPattern';
+@import '../assets/scss/userPhotoContainer.scss';
+@import '../assets/scss/cards.scss';
+
+body {    
+    grid-template-columns: repeat(6, 1fr);
+    padding: 0;
+    gap: 0 5%;
+}
+
+header {
+    padding: 2rem 10%;
+}
+
+main {
+    width: 100%;
+    min-height: 110vh;
+    gap: 1.5rem;
+
+    .gm-control-active gm-fullscreen {
+        display: none;
+    }
+
+    .mapouter {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        .gmap_canvas {
+            width: 100%;
+            height: 100%;
+            iframe {
+                width: 100%;
+                height: 100%;
+            }
+
+            &.skeleton {
+                border-radius: 0;
+            }
+        }
+    }
+
+    #filters {
+        @include flexBox($align: flex-start);
+        @include card3D();
+        position: absolute;
+        right: unset;
+        left: .5rem;
+        top: unset;
+        bottom: 5rem;
+        background-color: var(--backgroundColor);
+        width: 4rem;
+        height: 4rem;
+        border-radius: .5rem;
+        padding: 1.5rem .5rem;
+        z-index: 100;
+        cursor: pointer;
+
+        #toggle {
+            @include flexBox();
+            position: relative;
+            width: 100%;
+            height: 15px;
+            border-radius: 1rem;
+        }
+    }
+}
+
+@media (min-width: 1001px) {
+    body {
+        grid-template-columns: repeat(16, 1fr);
+        padding: 0 0 0 2%;
+        gap: 0 2%;
+    }
+
+    header {
+        padding: 2rem 0;
+    }
+
+    main {
+        grid-area: 1/5/4/17;
+        width: 100%;
+        min-height: 100vh;
+
+        #filters {
+            top: unset;
+            right: 4rem;
+            bottom: 2rem;
+
+            right: .5rem;
+            left: unset;
+            top: 5rem;
+            bottom: unset;
+        }
+    }
+}
+
+@media (min-width: 1300px) {
+    main {
+        grid-area: 1/4/4/17;
+    }
+}
+

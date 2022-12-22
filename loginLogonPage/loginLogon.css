@@ -1,0 +1,486 @@
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+html, body {
+  overflow-x: hidden;
+}
+
+body::-webkit-scrollbar, body > *::-webkit-scrollbar {
+  width: 12px;
+}
+body::-webkit-scrollbar-track, body > *::-webkit-scrollbar-track {
+  background: none;
+}
+body::-webkit-scrollbar-thumb, body > *::-webkit-scrollbar-thumb {
+  background-color: var(--waveUserPhoto2);
+  border-radius: 20px;
+  border: none;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color);
+}
+
+input, button {
+  background: none;
+  border: none;
+}
+
+textarea {
+  resize: none;
+  background: none;
+  border: none;
+  width: 100%;
+  padding: 1.5rem;
+  border: 1px solid;
+  border-color: var(--color);
+  border-radius: 0.5rem;
+  color: var(--color);
+}
+
+svg.feather {
+  stroke-width: 2.5px;
+}
+
+:root {
+  --backgroundColor: rgb(31, 31, 31);
+  --color: #ffffff;
+  --green: rgb(55, 166, 3);
+  --shadow: rgba(0, 0, 0, 0.30);
+  --smoothEdge: rgba(255, 255, 255, .6);
+  --waveUserPhoto1: rgba(255, 255, 255, .550);
+  --waveUserPhoto2: rgba(255, 255, 255, .350);
+  --waveUserPhoto3: rgba(255, 255, 255, .150);
+  --waveUserPhoto4: rgba(255, 255, 255, .050);
+  --dangerColor: rgb(189, 8, 8);
+  --successColor: rgb(64, 189, 6);
+  --extraColor: #00F0FF;
+}
+:root h4, :root h5 {
+  font-weight: 100;
+}
+
+:root.lightTheme {
+  --backgroundColor: rgb(235, 231, 231);
+  --color: rgb(0, 0, 0);
+  --shadow: rgba(255, 255, 255, 0.702);
+  --smoothEdge: rgba(0, 0, 0, .6);
+  --waveUserPhoto1: rgba(0, 0, 0, .550);
+  --waveUserPhoto2: rgba(0, 0, 0, .350);
+  --waveUserPhoto3: rgba(0, 0, 0, .150);
+  --waveUserPhoto4: rgba(0, 0, 0, .050);
+}
+:root.lightTheme h4, :root.lightTheme h5 {
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+@font-face {
+  font-family: "Inter bold";
+  src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+@font-face {
+  font-family: "Inter light";
+  src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+@font-face {
+  font-family: "Poppins";
+  src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+@font-face {
+  font-family: "Poppins light";
+  src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+@-webkit-keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@keyframes blinkCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+@-webkit-keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 270px;
+  }
+}
+@-webkit-keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@keyframes skeletonLoading {
+  from {
+    background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+  }
+  to {
+    background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+  }
+}
+@-webkit-keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes transformeX {
+  to {
+    transform: translateX(0);
+  }
+}
+@media (min-width: 1001px) {
+  @-webkit-keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 690px;
+    }
+  }
+}
+body {
+  background-color: var(--backgroundColor);
+  color: rgb(255, 255, 255);
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 10fr;
+  padding: 2rem 10%;
+  gap: 0 5%;
+}
+
+header {
+  grid-area: 1/1/2/7;
+}
+header .titles {
+  font-family: "Poppins";
+}
+header .titles .logo {
+  background: linear-gradient(180deg, #00D76E 0%, #00D76E 0.01%, #1ABD00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+header .titles p {
+  font-family: "Inter";
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  grid-area: 2/1/3/7;
+}
+main #forms {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+}
+main #forms .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: nowrap;
+  font-family: "Inter";
+  position: absolute;
+  min-height: 30vh;
+  width: 80%;
+  max-width: 400px;
+  transition: all 0.2s linear;
+}
+main #forms .form .textTerms p {
+  font-size: 1.1rem;
+}
+main #forms .form .field {
+  position: relative;
+  width: 100%;
+}
+main #forms .form .field input {
+  border-bottom: 2px solid rgb(255, 255, 255);
+  transition: all 0.2s linear;
+  color: rgb(255, 255, 255);
+  width: 100%;
+  font-size: 1.1rem;
+}
+main #forms .form .field input[type=password]::-ms-reveal, main #forms .form .field input[type=password]::-ms-clear {
+  background-color: white;
+  padding: 0 0.2rem;
+}
+main #forms .form .field input.error {
+  border-bottom: 2px solid var(--dangerColor);
+}
+main #forms .form .field input.correct {
+  border-bottom: 2px solid var(--successColor);
+}
+main #forms .form .field label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 1.1rem;
+  transition: all 0.2s linear;
+}
+main #forms .form .field input ~ label {
+  top: -1.5rem;
+  font-size: 0.95rem;
+}
+main #forms .form .field input:-webkit-autofill,
+main #forms .form .field input:-webkit-autofill:hover,
+main #forms .form .field input:-webkit-autofill:focus,
+main #forms .form .field input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1f1f1f inset !important;
+  -webkit-text-fill-color: white !important;
+}
+main #forms .form button[type=submit] {
+  box-shadow: 0 0 50px 5px rgb(31, 31, 31);
+  border-radius: 2rem;
+  border: 2px solid rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  transition: all 0.2s linear;
+  padding: 0.5rem 2.5rem;
+  font-size: 1rem;
+}
+main #forms .form button[type=submit]:hover {
+  border-color: var(--successColor);
+  color: var(--successColor);
+  box-shadow: 0 0 50px 5px rgb(25, 25, 25);
+  border-radius: 2rem;
+}
+main #forms .form:not(.active) {
+  display: none;
+}
+main #forms .form.login:not(.active) {
+  transform: translateX(-100vw);
+}
+main #forms .form.signUp:not(.active) {
+  transform: translateX(100vw);
+}
+main #forms .form.active {
+  transform: translateX(0);
+}
+main #accessModel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+  width: 225px;
+}
+main #accessModel #toggleForm {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0;
+  flex-wrap: nowrap;
+  box-shadow: 0 0 50px 5px rgb(31, 31, 31);
+  border-radius: 0;
+  width: 100%;
+  height: 3rem;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 2rem;
+  padding: 1rem 0.3rem;
+}
+main #accessModel #toggleForm .toggleButton {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: nowrap;
+  height: 100%;
+  width: 50%;
+  padding: 1rem;
+  border-radius: 2rem;
+  position: relative;
+  color: rgb(255, 255, 255);
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.2s linear;
+}
+main #accessModel #toggleForm .toggleButton.active {
+  color: var(--successColor);
+  border: 2px solid var(--successColor);
+}
+main #accessModel .noRegister {
+  position: relative;
+  font-family: "Poppins";
+  overflow: hidden;
+  color: rgb(255, 255, 255);
+}
+main #accessModel .noRegister::before {
+  content: "";
+  position: absolute;
+  bottom: -0.2rem;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--green);
+  transition: width 0.2s linear;
+}
+main #accessModel .noRegister:hover::before {
+  width: 100%;
+}
+
+.video {
+  position: absolute;
+  left: 0;
+  top: 0;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -100;
+  filter: brightness(0.3);
+}
+.video.videoDesktop {
+  display: none;
+}
+
+@media (min-width: 1001px) {
+  body {
+    grid-template-columns: repeat(16, 1fr);
+    grid-template-rows: 1fr 9fr;
+    padding: 2rem 2%;
+    gap: 2rem 2%;
+  }
+  header {
+    grid-area: 1/2/2/7;
+  }
+  main {
+    grid-area: 2/6/3/12;
+  }
+  main .form {
+    box-shadow: 0 0 50px 5px rgba(22, 22, 22, 0.793);
+    border-radius: 1rem;
+    background-color: rgb(31, 31, 31);
+    padding: 3rem 2.5rem 2rem;
+  }
+  .video.videoMobile {
+    display: none;
+  }
+  .video.videoDesktop {
+    display: block;
+  }
+}
+@media (max-height: 565px) {
+  main #accessModel {
+    display: none;
+  }
+}/*# sourceMappingURL=loginLogon.css.map */

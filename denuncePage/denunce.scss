@@ -1,0 +1,208 @@
+@import '../assets/scss/preloader';
+@import '../assets/scss/generalPattern';
+@import '../assets/scss/userPhotoContainer';
+@import '../assets/scss/disposalSection';
+@import '../assets/scss/typesGarbage';
+@import '../assets/scss/bot';
+@import '../assets/scss/cards';
+
+main {
+    & > section {
+        width: 100%;
+        max-width: 640px;
+    }
+
+    padding-bottom: 5rem;
+
+    #mapSearchTrashPoints {
+        @include flexBox($flexDirection: column, $align: unser, $gap: 1rem);
+        .mapouter {
+            max-width: 100%;
+                width: 100%;
+                max-width: 100%;
+                max-height: 400px;
+                height: 400px;
+                overflow: hidden;
+                border-radius: 1rem;
+    
+                & > div {
+                    height: 100%;
+                }
+    
+                #mapDenounce {
+                    height: 400px;
+                }
+    
+            }
+    
+            .gmap_canvas {
+                iframe {
+                    @include card3D($borderRadius: 1rem);
+                    width: 100%;
+                    height: 300px;
+                }
+            }
+        }
+    }
+    
+    #formTrashPoint {
+        @include flexBox();
+        width: 100%;
+        
+        .form {
+            @include flexBox($flexDirection: column, $gap: 3rem);
+            font-family: 'Inter';
+            width: 100%;
+
+            .fieldContainer {
+                @include flexBox($justify: space-between, $flexWrap: wrap, $gap: 3rem 1.5rem);
+                width: 100%;
+                
+                & .field {
+                    &:first-child {
+                        max-width: 300px;
+                    }
+
+                    &:last-child {
+                        width: 4.5rem;
+                    }
+                }
+            }
+    
+            .field {
+                position: relative;
+                width: 100%;
+    
+                input {
+                    border-bottom: 2px solid var(--color);
+                    transition: all .2s linear;
+                    color: var(--color);
+                    width: 100%;
+    
+                    font-size: 1rem;
+                }
+    
+                label {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+    
+                    font-size: 1.1rem;
+    
+                    transition: all .2s linear;
+                }
+    
+                input ~ label{
+                    top: -1.5rem;
+                    font-size: .95rem;
+                }
+    
+                input:-webkit-autofill,
+                input:-webkit-autofill:hover, 
+                input:-webkit-autofill:focus, 
+                input:-webkit-autofill:active  {
+                    -webkit-box-shadow: 0 0 0 30px #1f1f1f inset !important;
+                    -webkit-text-fill-color: white !important;
+                }
+            }
+
+            .typeFilesTrashPoint {
+                @include flexBox($gap: 2rem, $flexWrap: wrap);
+                width: 100%;
+                transition: all .2s linear;
+
+                .fileField {
+                    width: 100%;
+                    max-width: 250px;
+                    height: 3rem;
+                    padding: .5rem;
+                    transition: all .2s linear;
+                    cursor: pointer;
+                    border-radius: .8rem;
+
+                    &:hover {
+                        @include card3D($borderRadius: .8rem);
+                        scale: 1.05;
+                    }
+
+                    input {
+                        display: none;
+                    }
+
+                    label {
+                        @include flexBox($gap: 1rem);
+                        height: 100%;
+                        cursor: pointer;
+                    }
+                }
+            }
+    
+            button[type='submit'] {
+                border: 2px solid var(--color);
+                color: var(--successColor);
+                cursor: pointer;
+                transition: all .2s linear;
+                padding: .5rem 2.5rem;
+                font-size: 1rem;
+                width: 100%;
+                max-width: 300px;
+                border-radius: 2rem;
+    
+                &:hover {
+                    @include card3D($boxShadow: 0 0 20px 5px var(--shadow), $borderRadius: 2rem);
+                    border-color: var(--successColor);
+                    color: var(--color);
+                }
+            }
+        }
+    }
+
+.moreComplaints {
+    @include flexBox();
+
+    &.copy {
+        display: none;
+    }
+
+    button {
+        @include card3D($boxShadow: 0 0 20px 5px var(--shadow), $borderRadius: 2rem);
+        border: 2px solid var(--color);
+        color: var(--color);
+        cursor: pointer;
+        transition: all .2s linear;
+        padding: .5rem 2.5rem;
+        font-size: 1rem;
+        width: 100%;
+        max-width: 300px;
+        scale: .85;
+
+        &:hover {
+            border-color: var(--successColor);
+            color: var(--successColor);
+            scale: 1;
+        }
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    main {
+        padding: 2rem 0;
+    }
+
+    .moreComplaints {
+        display: none;
+        
+        &.copy {
+            display: flex;
+            font-weight: 100;
+
+            &:hover {
+                border-color: var(--successColor);
+                color: var(--successColor);
+                scale: 1;
+            }
+        }
+    }
+}
