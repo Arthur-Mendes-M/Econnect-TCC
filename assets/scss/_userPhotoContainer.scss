@@ -1,0 +1,58 @@
+@import 'mixins';
+
+.userPhotoContainer {
+    @include flexBox();
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    position: relative;
+
+    background-image: url(../assets/midia/defaultUserPhoto.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 50%;
+        transition: all .2s linear;
+
+        width: 100%;
+        height: 100%;
+        border: 2px solid var(--color);
+    }
+
+    .circle {
+        position: absolute;
+        width: 110%;
+        height: 110%;
+        border-radius: 50%;
+        border: 2px solid var(--color);
+        z-index: -1;
+
+        &:nth-child(1) {
+            width: 160%;
+            height: 160%;
+            border: 2px solid var(--waveUserPhoto1);
+        }
+
+        &:nth-child(2) {
+            width: 220%;
+            height: 220%;
+            border: 2px solid var(--waveUserPhoto2);
+        }
+
+        &:nth-child(3) {
+            width: 280%;
+            height: 280%;
+            border: 2px solid var(--waveUserPhoto3);
+        }
+
+        &:nth-child(4) {
+            width: 340%;
+            height: 340%;
+            border: 2px solid var(--waveUserPhoto4);
+        }
+    }
+}

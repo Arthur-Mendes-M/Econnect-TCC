@@ -1,0 +1,96 @@
+@import 'mixins';
+
+#typesGarbage {
+    @include flexBox($flexDirection: column, $gap: 1rem);  
+    max-width: 700px;
+
+    display: none;
+
+    .cards {
+        width: 100%;
+        @include flexBox($gap: 1rem, $flexWrap: wrap);  
+
+        .card {
+            &:last-child {
+                width: 100%;
+                .icon {
+                    padding: 1.3rem 0;
+                    width: 90%;
+                }
+            }
+
+            .icon {
+                padding: 2rem 2rem;
+            }
+        }
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) and (max-width: 1024px){
+
+    #typesGarbage {
+        display: flex;
+        position: fixed;
+        top: 2rem;
+        right: 2%;
+        width: 25%;
+        max-width: 385px;
+
+        .cards {            
+            .card:nth-child(3), .card:nth-child(5) {
+                display: none;
+            }
+
+            .card:last-child {
+                .icon {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1025px) {
+    #typesGarbage {
+        display: flex;
+        position: fixed;
+        top: 2rem;
+        right: 2%;
+        width: 25%;
+        max-width: 385px;
+
+        .cards {            
+            .card:last-child {
+                .icon {
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+// Responsividade para a cima dos 1280px 
+
+@media (min-width: 1280px) {
+    #typesGarbage {
+        .cards {
+            .card:nth-child(3), .card:nth-child(5) {
+                display: flex;
+            }
+        }
+    }
+}
+
+// Responsividade para telas até a altura de 750px e largura mínima de 1001px
+
+@media (max-height: 760px) and (min-width: 1001px) {
+    #typesGarbage {
+        .cards {
+            .card:nth-child(2), .card:nth-child(3), .card:nth-child(4), .card:nth-child(5){
+                display: none;
+            }
+        }
+    }
+}

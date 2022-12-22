@@ -1,0 +1,103 @@
+@import 'variables';
+
+@mixin flexBox($flexDirection: row, $align: center, $justify: center, $gap: 0, $flexWrap: nowrap) {
+    display: flex;
+    flex-direction: $flexDirection;
+    align-items: $align;
+    justify-content: $justify;
+    gap: $gap;
+    flex-wrap: $flexWrap;
+}
+
+@mixin gridDisplay($gridTColumns: auto, $gridTRows: auto) {
+    display: grid;
+    grid-template-columns: $gridTColumns;
+    grid-template-rows: $gridTRows;
+    gap: $g;
+}
+
+@mixin greenGradient() {
+    background: linear-gradient(180deg, #00D76E 0%, #00D76E 0.01%, #1ABD00 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin redGradient() {
+    background: linear-gradient(90deg, rgba(255,66,66,1) 0%, rgba(212,20,20,1) 50%, rgba(149,6,6,1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin blueGradient() {
+    background: linear-gradient(94.79deg, #00E0FF -25.32%, #0558BA 170.77%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin botGradient() {
+    background: linear-gradient(-190deg, #2400FF -8.37%, #00A2FD 139.97%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+
+@mixin card3D($boxShadow: 0 0 50px 5px var(--shadow), $borderRadius: 0) {
+    box-shadow: $boxShadow;
+    border-radius: $borderRadius;
+}
+
+@keyframes blinkCursor {
+    from {
+        border-right-color: rgba(255, 255, 255, .75);
+    }
+
+    to {
+        border-right-color: transparent;
+    }
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+     
+    to {
+        width: 270px;
+    }
+}
+
+@keyframes skeletonLoading {
+    from {
+        background-image: linear-gradient(90deg, #999 15%, #ccc 85%);
+    }
+    to {
+        background-image: linear-gradient(90deg, #999 100%, #ccc 0%);
+    }
+}
+
+@keyframes transformeX {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media (min-width: 1001px) {
+    @keyframes typing {
+        from {
+            width: 0;
+        }
+         
+        to {
+            width: 690px;
+        }
+    }
+}
+

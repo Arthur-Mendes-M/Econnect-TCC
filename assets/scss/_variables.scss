@@ -1,0 +1,83 @@
+// Color's (dark/light theme)
+:root {
+    --backgroundColor: rgb(31, 31, 31);
+    --color: #ffffff;
+
+    --green: rgb(55, 166, 3);
+
+    --shadow: rgba(0, 0, 0, 0.30);
+    --smoothEdge: rgba(255, 255, 255, .6);
+
+    --waveUserPhoto1: rgba(255, 255, 255, .550);
+    --waveUserPhoto2: rgba(255, 255, 255, .350);
+    --waveUserPhoto3: rgba(255, 255, 255, .150);
+    --waveUserPhoto4: rgba(255, 255, 255, .050);
+
+    --dangerColor: rgb(189, 8, 8);
+    --successColor: rgb(64, 189, 6);
+    --extraColor: #00F0FF;
+
+    h4, h5 {
+        font-weight: 100;
+    }
+}
+
+:root.lightTheme {
+    --backgroundColor: rgb(235, 231, 231);
+    --color: rgb(0, 0, 0);
+
+    --shadow: rgba(255, 255, 255, 0.702);
+
+    --smoothEdge: rgba(0, 0, 0, .6);
+
+    --waveUserPhoto1: rgba(0, 0, 0, .550);
+    --waveUserPhoto2: rgba(0, 0, 0, .350);
+    --waveUserPhoto3: rgba(0, 0, 0, .150);
+    --waveUserPhoto4: rgba(0, 0, 0, .050);
+
+    h4, h5 {
+        font-weight: 600;
+    }
+}
+
+// Inter types 
+@font-face {
+    font-family: 'Inter';
+    src: url(../assets/imports/Inter/static/Inter-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Inter bold';
+    src: url(../assets/imports/Inter/static/Inter-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Inter light';
+    src: url(../assets/imports/Inter/static/Inter-Light.ttf);
+}
+
+// Poppins types
+@font-face {
+    font-family: 'Poppins';
+    src: url(../assets/imports/Poppins/Poppins-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins bold';
+    src: url(../assets/imports/Poppins/Poppins-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins light';
+    src: url(../assets/imports/Poppins/Poppins-Light.ttf);
+}
+
+// Font's
+
+$font-family-inter: 'Inter', sans-serif;
+$font-family-inter-bold: 'Inter bold', sans-serif;
+$font-family-inter-light: 'Inter light', sans-serif;
+
+$font-family-poppins: 'Poppins', sans-serif;
+$font-family-poppins-bold: 'Poppins bold', sans-serif;
+$font-family-poppins-light: 'Poppins light', sans-serif;

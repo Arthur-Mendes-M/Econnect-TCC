@@ -1,0 +1,43 @@
+@import 'mixins';
+
+.title {
+    width: fit-content;
+    h3 {
+        font-family: 'Poppins';
+        font-weight: 100;
+    }
+
+    p {
+        font-family: 'Poppins light';
+        margin-top: .5rem;
+    }
+}
+
+.card {
+    @include flexBox($flexDirection: column, $gap: 1rem);  
+    font-family: 'Poppins light';
+
+    .icon {
+        @include card3D($borderRadius: 1rem);
+        @include flexBox();  
+        padding: 1rem;
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    .card {
+        cursor: pointer;
+
+        .icon {
+            transition: all .3s ease;  
+        }
+
+        &:hover {
+            .icon {
+                transform: scale(1.15);
+            }
+        }   
+    }
+}

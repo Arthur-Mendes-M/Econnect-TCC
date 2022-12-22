@@ -1,0 +1,66 @@
+@import 'variables';
+@import 'mixins';
+
+:root.lightTheme {
+    .disposalSection {
+        .disposalCards {
+            .disposalCard {
+                @include card3D($boxShadow: none, $borderRadius: 1rem);
+            }
+        }
+    }
+}
+
+.disposalSection {
+    @include flexBox($flexDirection: column, $align: unser, $gap: 1rem);
+
+    .disposalCards {
+        @include flexBox($gap: 5%);
+        width: 100%;
+
+        .disposalCard {
+            @include card3D($borderRadius: 1rem);
+            @include flexBox($align: flex-end);
+            position: relative;
+            width: 50%;
+            max-width: 300px;
+            height: 200px;
+            padding: .5rem;
+            font-family: 'Poppins light';
+            text-align: center;
+            color: rgb(255, 255, 255);
+
+            &:nth-child(1){
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("../assets/midia/imgDescartar.jpg");
+
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            &:nth-child(2){
+                background: linear-gradient(0deg, rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)), url("../assets/midia/imgSolicitar.jpg");
+
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+
+            svg {
+                position: absolute;   
+                left: .5rem;             
+                top: .5rem;
+            }
+        }
+    }
+}
+
+// Responsividade para as telas acima de 1001px
+
+@media (min-width: 1001px) {
+    .disposalSection {
+        .title {
+            display: none;
+        }
+    }
+}
